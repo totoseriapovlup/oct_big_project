@@ -11,11 +11,6 @@ class Auth
      * @return bool
      */
     static public function guest(){
-        session_start();
-        if(empty($_SESSION['login'])){
-            return true;
-        }else{
-            return false;
-        }
+        return !(bool)Session::getUser();
     }
 }

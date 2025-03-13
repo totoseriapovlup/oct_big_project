@@ -12,6 +12,9 @@ function loadConfig(){
     $configStr = file_get_contents($configFile);
     $configPairs = explode(PHP_EOL, $configStr);
     foreach ($configPairs as $configPair){
+        if(empty($configPair)){
+            continue;
+        }
         $confComponents = explode('=', $configPair);
         if(count($confComponents) != 2){
             throw new Exception('Incorrect config pair ' . $configPair);

@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="/css/style.css"/>
     </head>
     <body>
-        <header>My site</header>
+        <header><?= \app\core\Translate::getText('site_name')?></header>
         <main>
             <div id="content">
                 <?php include_once $pagePath?>

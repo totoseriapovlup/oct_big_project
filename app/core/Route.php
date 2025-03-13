@@ -55,7 +55,8 @@ class Route
         if(!method_exists($controller, $actionName)){
             self::notFound();
         }
-        $controller->$actionName();
+        $request = new Request();
+        $controller->$actionName($request);
     }
 
     /**
