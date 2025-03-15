@@ -39,6 +39,6 @@ class TaskController extends \app\core\AbstractController
         $task['name'] = $request->name;
         //TODO validate
         $this->model->add($task);
-//        $this->response->redirect(Route::url('task'));
+        $this->response->redirect(Route::url('task'));
     }
 }
