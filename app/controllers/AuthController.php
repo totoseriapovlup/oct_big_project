@@ -4,6 +4,7 @@
 namespace app\controllers;
 
 
+use app\core\Auth;
 use app\core\Route;
 use app\core\Session;
 use app\core\Translate;
@@ -50,7 +51,7 @@ class AuthController extends \app\core\AbstractController
             Session::setErrors([Translate::getText('auth_error')]);
             $this->response->redirect(Route::url('auth'));
         }
-        Session::setUser(['login' => $login]);
+        Auth::setUser(['login' => $login]);
         $this->response->redirect(Route::url('task'));
     }
 }

@@ -11,7 +11,7 @@ class Auth
      * @return bool
      */
     static public function guest(){
-        return !(bool)Session::getUser();
+        return !(bool)self::getUser();
     }
 
     static function getUser(){
