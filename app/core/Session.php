@@ -6,17 +6,17 @@ namespace app\core;
 
 class Session
 {
-    static function getUser(){
+    static function getItem($key){
         session_start();
-        if(empty($_SESSION['user'])){
+        if(empty($_SESSION[$key])){
             return null;
         }
-        return $_SESSION['user'];
+        return $_SESSION[$key];
     }
 
-    static public function setUser(array $user){
+    static public function setItem($key, $val){
         session_start();
-        $_SESSION['user'] = $user;
+        $_SESSION[$key] = $val;
     }
 
     static public function setErrors(array $errors){

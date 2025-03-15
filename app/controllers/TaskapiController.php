@@ -10,7 +10,7 @@ use app\core\Session;
 use app\core\Translate;
 use app\models\TaskModel;
 
-class TaskController extends \app\core\AbstractController
+class TaskapiController extends \app\core\AbstractController
 {
 
     public function __construct()
@@ -21,24 +21,24 @@ class TaskController extends \app\core\AbstractController
 
     public function index()
     {
-        $this->response->view('task_index', [
+        $this->response->view('taskapi_index', [
             'title' => Translate::getText('task_title'),
-            'tasks' => $this->model->all(),
         ]);
     }
 
-    public function create(){
-        $this->response->view('task_create', [
-            'title' => Translate::getText('task_title_create'),
-            'action' => Route::url('task', 'add'),
-            'errors' => Session::getErrors(),
-        ]);
+    public function all(){
+        $this->response->json($this->model->all());
     }
 
     public function add($request){
+        var_dump($request);
         $task['name'] = $request->name;
+        var_dump($task);
         //TODO validate
-        $this->model->add($task);
-//        $this->response->redirect(Route::url('task'));
+        if($this->model->add($task)){
+            $this->response->status(201);
+        }else{
+            $this->response->status(500);
+        }
     }
 }

@@ -81,4 +81,9 @@ class Response
     private function getPagesDir(){
         return self::VIEWS_DIR . self::VIEWS_PAGES_DIR;
     }
+
+    public function json(array $data){
+        echo json_encode($data);
+        header('Content-Type: application/json');
+    }
 }

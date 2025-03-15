@@ -8,9 +8,9 @@ return [
     'auth_pass_label' => 'Password',
     'task_title' => 'Tasks',
     'task_title_create' => 'Create new task',
-    'task_id' => 'Tasks',
-    'task_name' => 'Tasks',
-    'task_action' => 'Tasks',
+    'task_id' => 'Id',
+    'task_name' => 'Name',
+    'task_action' => 'Action',
     'task_create' => 'New task',
     'task_name_label' => 'Task',
 ];

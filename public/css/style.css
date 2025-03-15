@@ -27,3 +27,15 @@ form{
         padding: 5px;
     }
 }
+
+#create-task{
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(172,164,169,0.36);
+}

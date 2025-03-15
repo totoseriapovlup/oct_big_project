@@ -13,4 +13,12 @@ class Auth
     static public function guest(){
         return !(bool)Session::getUser();
     }
+
+    static function getUser(){
+        Session::getItem('user');
+    }
+
+    static public function setUser(array $user){
+        Session::setItem('user', $user);
+    }
 }
