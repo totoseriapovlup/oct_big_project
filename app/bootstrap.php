@@ -36,4 +36,6 @@ spl_autoload_register(function($class){
 
 loadConfig();
 
-\app\core\Route::init();
+if(php_sapi_name() != 'cli'){
+    \app\core\Route::init();
+}
